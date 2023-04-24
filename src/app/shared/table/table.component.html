@@ -1,0 +1,20 @@
+<nz-table [nzFrontPagination]="false" [nzData]="data">
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns; trackBy: trackByColumnFn">
+        {{ column.title | translate }}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      class="rows"
+      *ngFor="let data of this.data; trackBy: trackByDataFn"
+      (click)="passId(data.id)"
+    >
+      <td *ngFor="let column of columns; trackBy: trackByColumnFn">
+        {{ data[column.fieldName] }}
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

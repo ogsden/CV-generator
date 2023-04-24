@@ -1,0 +1,28 @@
+<nz-tabset>
+  <nz-tab nzTitle="{{ 'employees.info' | translate }}">
+    <div>
+      <app-employee-form></app-employee-form>
+      <div class="buttons">
+        <button nz-button nzType="primary" (click)="onSubmit()">
+          {{ "buttons.save" | translate }}
+        </button>
+        <button nz-button nzType="default" (click)="cancel()">
+          {{ "buttons.cancel" | translate }}
+        </button>
+      </div>
+    </div>
+  </nz-tab>
+  <nz-tab nzTitle="CV">
+    <div>
+      <app-cv></app-cv>
+      <div class="buttons">
+        <button nz-button nzType="primary" (click)="onSubmit()">
+          {{ "buttons.save" | translate }}
+        </button>
+        <button nz-button nzType="default" (click)="cancel()">
+          {{ "buttons.cancel" | translate }}
+        </button>
+      </div>
+    </div>
+  </nz-tab>
+</nz-tabset>

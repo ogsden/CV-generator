@@ -1,0 +1,29 @@
+<div class="icons">
+  <button nz-button nzGhost>
+    <span nz-icon nzType="search" nzTheme="outline"></span>
+  </button>
+  <button nz-button nzGhost>
+    <span nz-icon nzType="question-circle" nzTheme="outline"></span>
+  </button>
+  <button nz-button nzGhost>
+    <span nz-icon nzType="bell" nzTheme="outline"></span>
+  </button>
+  <button
+    nz-button
+    nz-dropdown
+    [nzDropdownMenu]="menu"
+    nzPlacement="bottomCenter"
+    nzGhost
+    nzTrigger="click"
+  >
+    <span nz-icon nzType="user" nzTheme="outline"></span>
+  </button>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item (click)="signOut()">Sign out</li>
+    </ul>
+  </nz-dropdown-menu>
+  <button nz-button nzGhost (click)="changeLanguage()">
+    <span nz-icon nzType="translation" nzTheme="outline"></span>
+  </button>
+</div>

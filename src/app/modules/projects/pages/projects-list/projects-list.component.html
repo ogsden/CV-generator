@@ -1,0 +1,15 @@
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+<div class="button">
+  <button [routerLink]="[projectCreateRoute]" nz-button nzType="primary">
+    {{ "projects.add" | translate }}
+  </button>
+</div>
+<app-table
+  (rowClicked)="navigate($event)"
+  [data]="projects"
+  [columns]="columns"
+></app-table>

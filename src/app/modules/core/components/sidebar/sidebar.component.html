@@ -1,0 +1,25 @@
+<ul
+  nz-menu
+  nzMode="inline"
+  nzTheme="light"
+  [nzInlineIndent]="12"
+  [nzInlineCollapsed]="isCollapsed"
+>
+  <li nz-menu-item nzMatchRouter>
+    <a [routerLink]="[employeesRoute.path]">
+      <span nz-icon nzType="form"></span>
+      <span>{{ "core.employees" | translate }}</span>
+    </a>
+  </li>
+  <li nz-menu-item nzMatchRouter>
+    <a [routerLink]="[projectsRoute.path]">
+      <span nz-icon nzType="database"></span>
+      <span>{{ "core.projects" | translate }}</span>
+    </a>
+  </li>
+  <li nz-menu-item class="sidebar-bottom">
+    <a nzType="text" (click)="toggleCollapsed()">
+      <i nz-icon [nzType]="isCollapsed ? 'menu-fold' : 'menu-unfold'"></i>
+    </a>
+  </li>
+</ul>

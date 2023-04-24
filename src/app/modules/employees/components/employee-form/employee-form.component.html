@@ -1,0 +1,77 @@
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+
+<form [formGroup]="employeeForm">
+  <div class="form-group">
+    <div class="form-cell">
+      <app-input
+        label="employees.form.firstName"
+        placeholder="employees.form.firstName"
+        errorMessage="controls.error"
+        formControlName="firstName"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-input
+        label="employees.form.lastName"
+        placeholder="employees.form.lastName"
+        errorMessage="controls.error"
+        formControlName="lastName"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-input
+        label="employees.form.email"
+        placeholder="employees.form.email"
+        errorMessage="controls.emailError"
+        formControlName="email"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-multiple-select
+        label="employees.form.skills"
+        placeholder="employees.form.skills"
+        errorMessage="controls.error"
+        formControlName="skills"
+        [listOfOption]="skills"
+      ></app-multiple-select>
+    </div>
+    <div class="form-cell">
+      <app-select
+        label="employees.form.position"
+        placeholder="employees.form.position"
+        errorMessage="controls.error"
+        formControlName="position"
+        [listOfOption]="positions"
+      ></app-select>
+    </div>
+    <div class="form-cell">
+      <app-multiple-select
+        label="employees.form.languages"
+        placeholder="employees.form.languages"
+        errorMessage="controls.error"
+        formControlName="languages"
+        [listOfOption]="languages"
+      ></app-multiple-select>
+    </div>
+    <div class="form-cell">
+      <app-input
+        label="employees.form.education"
+        placeholder="employees.form.education"
+        errorMessage="controls.error"
+        formControlName="education"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-textarea
+        label="employees.form.description"
+        placeholder="employees.form.description"
+        errorMessage="controls.error"
+        formControlName="description"
+      ></app-textarea>
+    </div>
+  </div>
+</form>

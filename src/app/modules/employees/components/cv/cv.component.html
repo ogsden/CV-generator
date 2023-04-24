@@ -1,0 +1,132 @@
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+
+<div class="cv">
+  <nz-tabset
+    [(nzSelectedIndex)]="selectedIndex"
+    nzTabPosition="left"
+    nzType="editable-card"
+    (nzAdd)="addItem()"
+    (nzClose)="closeTab($event)"
+  >
+    <nz-tab
+      nzClosable
+      [nzTitle]="cv"
+      *ngFor="let cv of cvs; let formIndex = index; trackBy: trackByIndex"
+    >
+      <div class="button">
+        <button nz-button (click)="downloadPdf()" nzType="default">
+          {{ "buttons.pdf" | translate }}
+        </button>
+      </div>
+      <form [formGroup]="getFormGroup(formIndex)">
+        <div class="form-group">
+          <div class="form-cell">
+            <app-input
+              label="employees.form.firstName"
+              placeholder="employees.form.firstName"
+              errorMessage="controls.error"
+              formControlName="firstName"
+            ></app-input>
+          </div>
+          <div class="form-cell">
+            <app-input
+              label="employees.form.lastName"
+              placeholder="employees.form.lastName"
+              errorMessage="controls.error"
+              formControlName="lastName"
+            ></app-input>
+          </div>
+          <div class="form-cell">
+            <app-multiple-select
+              label="employees.form.skills"
+              placeholder="employees.form.skills"
+              errorMessage="controls.error"
+              formControlName="skills"
+              [listOfOption]="skills"
+            ></app-multiple-select>
+          </div>
+          <div class="form-cell">
+            <app-select
+              label="employees.form.position"
+              placeholder="employees.form.position"
+              errorMessage="controls.error"
+              formControlName="position"
+              [listOfOption]="positions"
+            ></app-select>
+          </div>
+          <div class="form-cell">
+            <app-multiple-select
+              label="employees.form.languages"
+              placeholder="employees.form.languages"
+              errorMessage="controls.error"
+              formControlName="languages"
+              [listOfOption]="languages"
+            ></app-multiple-select>
+          </div>
+          <div class="form-cell">
+            <app-input
+              label="employees.form.education"
+              placeholder="employees.form.education"
+              errorMessage="controls.error"
+              formControlName="education"
+            ></app-input>
+          </div>
+          <div class="form-cell">
+            <app-textarea
+              label="employees.form.description"
+              placeholder="employees.form.description"
+              errorMessage="controls.error"
+              formControlName="description"
+            ></app-textarea>
+          </div>
+        </div>
+        <div class="add-project">
+          <app-select
+            label="projects.select"
+            placeholder="projects.select"
+            errorMessage="controls.error"
+            formControlName="project"
+            [listOfOption]="projects"
+          ></app-select>
+          <div class="add-button">
+            <button nz-button nzType="primary" (click)="addProject(formIndex)">
+              {{ "projects.add" | translate }}
+            </button>
+          </div>
+        </div>
+        <nz-collapse class="collapse">
+          <nz-collapse-panel
+            *ngFor="
+              let panel of formArray.at(formIndex).get('projectsNames').value;
+              let projectIndex = index;
+              trackBy: trackByIndex
+            "
+            [nzHeader]="headerTpl"
+          >
+            <ng-template #headerTpl>
+              <div class="header-content">
+                <span>{{ panel }}</span>
+                <button
+                  class="remove-project"
+                  nz-button
+                  (click)="removeProject(formIndex, projectIndex, $event)"
+                >
+                  <span nz-icon nzType="delete"></span>
+                </button>
+              </div>
+            </ng-template>
+            <app-project-form
+              [projectsInfo]="formArray.at(formIndex).get('projects').value"
+              [projectIndex]="projectIndex"
+              [cvIndex]="formIndex"
+            ></app-project-form>
+          </nz-collapse-panel>
+        </nz-collapse>
+      </form>
+    </nz-tab>
+  </nz-tabset>
+</div>

@@ -1,0 +1,12 @@
+<div>
+  <label class="label">{{ label | translate }}</label>
+  <nz-date-picker
+    class="date-picker"
+    nzPlaceHolder="{{ 'controls.select' | translate }}"
+    [formControl]="control"
+    (focusout)="onMoveFocus()"
+  ></nz-date-picker>
+  <p class="required" *ngIf="control.invalid && control.touched">
+    {{ errorMessage | translate }}
+  </p>
+</div>

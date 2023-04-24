@@ -1,0 +1,6 @@
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+<app-project-form (projectSaved)="saveProject($event)"></app-project-form>

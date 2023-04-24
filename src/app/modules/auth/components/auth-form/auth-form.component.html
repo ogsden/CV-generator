@@ -1,0 +1,56 @@
+<div *ngIf="authFailed" class="auth-error">
+  {{ "auth.error.credentials" | translate }}
+</div>
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+<form
+  nz-form
+  [formGroup]="validateForm"
+  class="login-form"
+  (ngSubmit)="submitForm()"
+>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="{{ 'auth.error.username' | translate }}">
+      <nz-input-group nzPrefixIcon="user">
+        <input
+          type="text"
+          nz-input
+          formControlName="identifier"
+          placeholder="{{ 'auth.username' | translate }}"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="{{ 'auth.error.password' | translate }}">
+      <nz-input-group nzPrefixIcon="lock">
+        <input
+          type="password"
+          nz-input
+          formControlName="password"
+          placeholder="{{ 'auth.password' | translate }}"
+        />
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <div nz-row class="login-form-margin">
+    <div nz-col [nzSpan]="12">
+      <label nz-checkbox>
+        <span>{{ "auth.remember" | translate }}</span>
+      </label>
+    </div>
+    <div nz-col [nzSpan]="12">
+      <a class="login-form-forgot">{{ "auth.forgot" | translate }}</a>
+    </div>
+  </div>
+  <button
+    nz-button
+    class="login-form-button login-form-margin"
+    [nzType]="'primary'"
+  >
+    {{ "auth.login" | translate }}
+  </button>
+</form>

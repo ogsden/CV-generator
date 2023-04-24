@@ -1,0 +1,79 @@
+{
+  "auth": {
+    "username": "Username",
+    "password": "Password",
+    "remember": "Remember me",
+    "forgot": "Forgot password",
+    "login": "Log in",
+    "error": {
+      "username": "Please input your username!",
+      "password": "Please input your Password!",
+      "credentials": "Incorrect login credentials"
+    }
+  },
+  "core": {
+    "home": "Home",
+    "employees": "Employees",
+    "projects": "Projects"
+  },
+  "projects": {
+    "list": "Projects list",
+    "create": "Create",
+    "edit": "Project info",
+    "add": "Add project",
+    "form": {
+      "name": "Name",
+      "description": "Description",
+      "domain": "Domain",
+      "internalName": "Internal name",
+      "from": "From",
+      "to": "To",
+      "skills": "Skills",
+      "responsibilities": "Responsibilities"
+    },
+    "table": {
+      "name": "Name",
+      "internalName": "Internal name",
+      "from": "From",
+      "to": "To"
+    },
+    "select": "Project"
+  },
+  "employees": {
+    "list": "Employees list",
+    "create": "Create",
+    "edit": "Employee info",
+    "add": "Add employee",
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "skills": "Skills",
+      "position": "Position",
+      "languages": "Languages",
+      "education": "Education",
+      "description": "Description"
+    },
+    "table": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "skills": "Skills",
+      "position": "Position",
+      "languages": "Languages"
+    },
+    "info": "Info"
+  },
+  "controls": {
+    "select": "Select date",
+    "choose": "Choose",
+    "error": "Please, specify the field",
+    "emailError": "Incorrect email"
+  },
+  "buttons": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "archieve": "Archieve",
+    "pdf": "Download PDF"
+  }
+}

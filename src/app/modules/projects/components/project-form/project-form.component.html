@@ -1,0 +1,88 @@
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+
+<div class="archieve">
+  <button nz-button nzType="default">
+    {{ "buttons.archieve" | translate }}
+  </button>
+</div>
+
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <div class="form-cell">
+      <app-input
+        label="projects.form.name"
+        placeholder="projects.form.name"
+        errorMessage="controls.error"
+        formControlName="name"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-input
+        label="projects.form.domain"
+        placeholder="projects.form.domain"
+        errorMessage="controls.error"
+        formControlName="domain"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-input
+        label="projects.form.internalName"
+        placeholder="projects.form.internalName"
+        errorMessage="controls.error"
+        formControlName="internalName"
+      ></app-input>
+    </div>
+    <div class="form-cell">
+      <app-date-picker
+        label="projects.form.from"
+        errorMessage="controls.error"
+        formControlName="from"
+      ></app-date-picker>
+    </div>
+    <div class="form-cell">
+      <app-date-picker
+        label="projects.form.to"
+        errorMessage="controls.error"
+        formControlName="to"
+      ></app-date-picker>
+    </div>
+    <div class="form-cell">
+      <app-multiple-select
+        label="projects.form.skills"
+        placeholder="projects.form.skills"
+        errorMessage="controls.error"
+        formControlName="skills"
+        [listOfOption]="skills"
+      ></app-multiple-select>
+    </div>
+    <div class="form-cell">
+      <app-multiple-select
+        label="projects.form.responsibilities"
+        placeholder="projects.form.responsibilities"
+        errorMessage="controls.error"
+        formControlName="responsibilities"
+        [listOfOption]="resp"
+      ></app-multiple-select>
+    </div>
+    <div class="form-textarea">
+      <app-textarea
+        label="projects.form.description"
+        placeholder="projects.form.description"
+        errorMessage="controls.error"
+        formControlName="description"
+      ></app-textarea>
+    </div>
+  </div>
+  <div class="buttons">
+    <button nz-button nzType="primary" type="submit">
+      {{ "buttons.save" | translate }}
+    </button>
+    <button nz-button nzType="default" (click)="cancel()">
+      {{ "buttons.cancel" | translate }}
+    </button>
+  </div>
+</form>

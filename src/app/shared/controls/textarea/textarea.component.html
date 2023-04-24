@@ -1,0 +1,15 @@
+<div>
+  <label class="label">
+    {{ label | translate }}
+  </label>
+  <textarea
+    nz-input
+    [placeholder]="placeholder | translate"
+    nzAutosize
+    [formControl]="control"
+  ></textarea>
+
+  <p class="required" *ngIf="control.invalid && control.touched">
+    {{ errorMessage | translate }}
+  </p>
+</div>

@@ -1,0 +1,15 @@
+<div class="spinner-wrapper" *ngIf="loading">
+  <div>
+    <nz-spin nzSimple nzSize="large"></nz-spin>
+  </div>
+</div>
+<div class="button">
+  <button [routerLink]="[employeeCreateRoute]" nz-button nzType="primary">
+    {{ "employees.add" | translate }}
+  </button>
+</div>
+<app-table
+  (rowClicked)="navigate($event)"
+  [data]="employees"
+  [columns]="columns"
+></app-table>
