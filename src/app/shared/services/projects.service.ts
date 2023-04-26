@@ -9,9 +9,8 @@ import { IProject } from '../interfaces/project.interface';
 })
 export class ProjectsService {
   private readonly apiUrlRelations =
-    'https://cv-generator-backend.onrender.com/api/projects?populate=*';
-  private readonly apiUrl =
-    'https://cv-generator-backend.onrender.com/api/projects/';
+    'http://localhost:1337/api/projects?populate=*';
+  private readonly apiUrl = 'http://localhost:1337/api/projects/';
 
   constructor(private http: HttpClient) {}
 

@@ -7,8 +7,7 @@ import { IControl } from '../interfaces/control.interface';
   providedIn: 'root',
 })
 export class RespService {
-  private readonly apiUrl =
-    'https://cv-generator-backend.onrender.com/api/responsibilities';
+  private readonly apiUrl = 'http://localhost:1337/api/responsibilities';
 
   constructor(private http: HttpClient) {}
 

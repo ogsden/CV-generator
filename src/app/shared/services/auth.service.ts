@@ -13,10 +13,7 @@ export class AuthService {
 
   public login(user: IUser): Observable<any> {
     return this.http
-      .post<any>(
-        'https://cv-generator-backend.onrender.com/api/auth/local',
-        user
-      )
+      .post<any>('http://localhost:1337/api/auth/local', user)
       .pipe(
         tap((response) => {
           localStorage.setItem('auth-token', response.jwt);

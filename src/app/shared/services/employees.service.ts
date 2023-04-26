@@ -8,9 +8,8 @@ import { IEmployee } from '../interfaces/employees.interface';
 })
 export class EmployeesService {
   private readonly apiUrlRelations =
-    'https://cv-generator-backend.onrender.com/api/users?populate=*';
-  private readonly apiUrl =
-    'https://cv-generator-backend.onrender.com/api/users/';
+    'http://localhost:1337/api/users?populate=*';
+  private readonly apiUrl = 'http://localhost:1337/api/users/';
 
   constructor(private http: HttpClient) {}
 
